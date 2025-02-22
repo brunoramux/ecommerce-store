@@ -3,6 +3,7 @@ import Container from './ui/container';
 import Link from 'next/link';
 import MainNav from './main-nav';
 import getCategories from '@/actions/get-categories';
+import NavBarActions from './navbar-actions';
 
 const Navbar: React.FC = async  () => {
   const categories = await getCategories()
@@ -16,10 +17,11 @@ const Navbar: React.FC = async  () => {
             <p className='font-bold text-xl'>STORE</p>
           </Link>
           <MainNav data={categories} />
+          <NavBarActions />
         </div>
       </Container>
     </div>
   ); 
-};
+};  
 
 export default Navbar;
